@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Welcome Home!</h2>
+        <p class="text-gray-700 mb-8">You are successfully logged in.</p>
+
+        <h3 class="text-2xl font-semibold mb-6">All Quizzes</h3>
+        <div th:each="quiz : ${quizzes}" class="bg-white border border-gray-200 rounded-lg p-6 mb-4 shadow-sm">
+            <h4 th:text="${quiz.quizname}" class="text-xl font-medium mb-2">Quiz Title</h4>
+            <p th:text="${quiz.description}" class="text-gray-600 mb-4">Quiz Description</p>
+            <a th:href="@{'/quiz/' + ${quiz.id}}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200">Start Quiz</a>
+        </div>
+
+        <a th:href="@{/login}" class="inline-block mt-8 text-blue-600 hover:text-blue-800">Logout</a>
+    </div>
+</body>
+</html>

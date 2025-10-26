@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quiz Score</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md text-center">
+        <h2 th:text="'Quiz: ' + ${quiz.quizname}" class="text-2xl font-bold mb-6">Quiz Name</h2>
+
+        <div class="border border-gray-300 rounded-lg p-6 mb-6">
+            <p th:text="'Your Score: ' + ${score} + ' / ' + ${total}" class="text-lg font-medium text-gray-700">Your Score</p>
+        </div>
+
+        <a th:href="@{/home}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-200">Back to Home</a>
+    </div>
+</body>
+</html>
